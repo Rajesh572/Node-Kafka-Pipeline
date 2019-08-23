@@ -15,7 +15,7 @@ var options = {
   encoding: 'utf8'
 };
 var topics = [{
-  topic: 'telemetrytest1'
+  topic: 'telemetrytest2'
 }
 ];
 var consumer = new Consumer(client, topics, options);
@@ -74,7 +74,7 @@ consumer.on('message', (message) => {
           eventObject.channelName = "niit-Channel"
 
           let object = JSON.stringify(eventObject);
-          let payloads = [{ topic: "eventslogstest1", messages: object }];
+          let payloads = [{ topic: "eventslogstest2", messages: object }];
           producer.send(payloads, function (err, data) {
             if (err) console.log('error occured while writing to kafka');
             if (data) console.log('successfully written to kafka', data);
